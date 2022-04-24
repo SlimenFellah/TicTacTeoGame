@@ -1,0 +1,166 @@
+* , *::after, *::before{
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: roboto;
+}
+:root{
+    --backgroundColor : #1A1A40;
+    --cellsColor : #270082;
+    --markColorlight : #8833bd;
+    --markColor : #7A0BC0;
+    --whiteColor : white;
+    --finalMessageBG : #fc22a1bb;
+}
+.Header,.Footer, .currentScore{
+    width : 100%;
+    position: absolute ;
+    color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+}
+.Footer {
+    bottom: 0;
+    margin-bottom: .5rem;
+}
+.currentScore {
+    color: var(--whiteColor);
+    bottom: 10vh;
+
+}
+.currentScore p{
+    display: block;
+}
+.Header p{
+    margin-top: 2.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--finalMessageBG);
+}
+.border{
+    background-color: var(--backgroundColor);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+.cell{
+    height: 100px;
+    width: 100px;
+    background-color: var(--cellsColor);
+    border: solid 1px var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.border :first-child,
+.border :nth-child(2),
+.border :nth-child(3){
+    border-top: none;
+}
+.border :last-child,
+.border :nth-child(7),
+.border :nth-child(8){
+    border-bottom: none;
+}
+.border :nth-child(n+1){
+    border-left: none;
+}
+.border :nth-child(3n+3){
+    border-right: none;
+}
+
+.cell.x::before,
+.cell.x::after,
+.border.x .cell:not(.circle):not(.x):hover::before,
+.border.x .cell:not(.circle):not(.x):hover::after{
+    content: '';
+    height: 90px;
+    width: 15px;
+    background-color: var(--markColor);
+    position: absolute;
+}
+.border.x .cell:not(.circle):not(.x):hover::before,
+.border.x .cell:not(.circle):not(.x):hover::after{
+    background-color: var(--markColorlight);
+}
+.cell.x::before,
+.border.x .cell:not(.circle):not(.x):hover::before{
+    transform: rotate(45deg);   
+}
+.cell.x::after,
+.border.x .cell:not(.circle):not(.x):hover::after{
+    transform: rotate(-45deg);   
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.border.circle .cell:not(.circle):not(.x):hover::before,
+.border.circle .cell:not(.circle):not(.x):hover::after{
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+}
+.cell.circle::before,
+.border.circle .cell:not(.circle):not(.x):hover::before{
+    background-color: var(--markColor);
+    height: 90px;
+    width: 90px;
+    transform: rotate(45deg);   
+}
+.border.circle .cell:not(.circle):not(.x):hover::before{
+    background-color: var(--markColorlight);
+}
+.cell.circle::after,
+.border.circle .cell:not(.circle):not(.x):hover::after{
+    background-color: var(--cellsColor);
+    height: 60px;
+    width: 60px;
+    transform: rotate(-45deg); 
+}
+.cell.x:hover,.cell.circle:hover{
+    cursor: not-allowed;
+}
+.border .cell:not(.circle):not(.x):hover{
+    cursor: pointer;
+}
+.finalMessage, .startMessage{
+    top: 0;
+    left:0;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--finalMessageBG);
+    display: none;
+}
+.finalMessage.show, .startMessage.show{
+    font-size: 3rem;
+    color: var(--whiteColor);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.finalMessage button, .startMessage button{
+    cursor: pointer;
+    font-size: 2.5rem;
+    padding: .5rem;
+    border: none;
+
+}
+.finalMessage button:hover,.startMessage button:hover{
+    font-size: 2.5rem;
+    padding: .5rem;
+    color:white;
+    background-color: black;
+    cursor: pointer;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tic Tac Toe Game</title>
+  </head>
+  <body>
+    <div class="Header"><p>Tic Tac Teo Game</p></div>
+    <div class="startMessage show" data-startMessage>
+      Choose who to start :
+      <div class="buttons">
+        <button id="xbtn">X</button>
+        <button id="obtn">O</button>
+      </div>
+    </div>
+    <div class="border" id="border">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+    <div class="currentScore">
+      <p>Current score &nbsp;</p>
+      <p>X :&nbsp; <p id="xScore"></p> &nbsp;&nbsp;</p> <br>
+      <p>O :&nbsp; <p id="oScore"></p> &nbsp;&nbsp;</p> <br>
+      <p>Draw :&nbsp; <p id="dScore"></p> </p>
+    </div>
+    <div class="finalMessage" data-finalMessage>
+      <div class="message" data-finalMessageText></div>
+      <button data-finalMessageBtn>Restart</button>
+    </div>
+    <div class="Footer"><p>Made with ♥ By Slimene Fellah</p></div>
+  </body>
+  <script src="scripts.js"></script>
+</html>
