@@ -25,7 +25,7 @@ const xScore = document.getElementById('xScore')
 const oScore = document.getElementById('oScore')
 const dScore = document.getElementById('dScore')
 const drawScore = document.getElementById('drawScore')
-
+/* comment */
 let scrX = 0
 let scrO = 0
 let scrD = 0
