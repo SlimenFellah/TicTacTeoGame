@@ -43,7 +43,8 @@
 }
 .border{
     /* background-color: var(--backgroundColor); */
-    background: url(/img.jpg);
+    background: url(/img.jpg) repeat;
+    background-size: contain;
     width: 100vw;
     height: 100vh;
     display: grid;
